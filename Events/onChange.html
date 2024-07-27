@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main-div">
+        <div>
+            <label for="">Your Name
+            <input type="text" name="" id="ice"></label>
+            <br>
+            <label >Choose an ice cream  flavor
+                <!-- <p>Chose andfad</p> -->
+            <!-- <select name="iceCreams" id="iceCreams" onchange="selectElement()"> -->
+                <select name="iceCreams" id="iceCreams">
+
+                <option value="">Select one...</option>
+            <option value="Chocolate">Chocolate</option>
+            <option value="sardine">Sardine</option>
+            <option value="vanilla">Vanilla</option>
+        </select>    
+            </label>
+            <div id="result"></div>
+        </div>
+    </div>
+    
+
+    <script >
+    
+    // const selectElement = ()=>{
+    //     const inputChange = document.getElementById('ice').value;
+    //     const iceCreams = document.getElementById("iceCreams").value;
+    //     const result = document.getElementById('result')
+
+    //     result.innerHTML = `Mr ${inputChange} select ${iceCreams} ice-crea flavor`
+    //     // console.log(`${inputChange} and ${iceCreams}`)
+
+    // }
+    const iceCreams = document.getElementById("iceCreams");
+
+    iceCreams.addEventListener('change',()=>{
+        const inputChange = document.getElementById('ice').value;
+        const iceCreams = document.getElementById("iceCreams").value;
+        const result = document.getElementById('result')
+
+        result.innerHTML = `Mr ${inputChange} select ${iceCreams} ice-crea flavor`
+    }
+    );
+    </script>
+</body>
+</html>

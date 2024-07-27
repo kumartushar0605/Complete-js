@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-div">
+        <div>
+            <p>A function is triggered when the user is pressing a key in the input field</p>
+            <br>
+            <input type="text" class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" 
+            onkeyup="keyUp()">
+            <br>
+            <p id="Keys"></p>
+        </div>
+    </div>
+    <script>
+        const keyPress= () =>{
+            document.getElementById('Keys').innerHTML = `you press ${event.key} and the its code is ${event.code}`
+
+        }
+
+        // better we use 2nd and 3rd once
+
+        const keyDown = () =>{
+            document.getElementById("Keys").innerHTML=`Key is Down `
+            // when we click backslah to delete then it will run
+        }
+        
+        const keyUp = ()=>{
+document.getElementById("Keys").innerHTML= `Key is Up`;
+// when we click backslah to delete then it will run
+        }
+    </script>
+</body>
+</html>

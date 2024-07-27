@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+                .parent-Div{
+height: 500px;
+width: 500px;
+place-content: center;
+border: 2px solid black;
+background-color: red;
+cursor: pointer;
+        }
+        .child-Div{
+            height: 200px;
+            
+            width: 300px;
+            border: 2px solid black;
+            margin-top: 30%;
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+
+    </style><center>
+    <div class="parent-Div" id="parentId">
+        <div class="child-Div" id="childId"></div>
+    </div></center>
+
+
+    <script>
+        const parentId = document.getElementById('parentId');
+        const childId = document.getElementById('childId');
+
+      const parentcall = () =>{
+        alert('parent Div Call')
+      }
+         // By Default its Event Bubbling when we click on chid div then alert for child div and alert for parent div comes ....
+
+
+      const childcall = () =>{
+        alert ('child Div Call')
+        // event.stopPropagation();   // by doing this when we click on child div only alert for child div comes and on click on parent div alert for parent div comes only separetly...
+
+      }
+        // parentId.addEventListener('click',parentcall);
+                                                           // here by default its event bubbling
+        // childId.addEventListener('click',childcall);
+
+
+
+        
+        // parentId.addEventListener('click',parentcall,false);
+                                                        //    here  its event bubbling , by the third arugument false
+        // childId.addEventListener('click',childcall,false);
+
+
+        
+        parentId.addEventListener('click',parentcall,true);
+                                                        //    here  its event capturing
+        childId.addEventListener('click',childcall,true);
+    </script>
+</body>
+</html>

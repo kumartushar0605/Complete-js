@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+             background: royalblue;
+
+        }
+        .credit{
+            text-align: center;
+            color:grey;
+
+        }
+        .content{
+            padding-top: 45px;
+            padding-bottom: 20px;
+        }
+
+        .button_containers{
+            width: 176px;
+            margin:0px auto;
+            margin-top: 30px;
+            padding-top: 40px;
+        }
+        .button_su{
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            border-radius: 3px;
+            margin-bottom: 30px;
+            box-shadow: 0px 10px 8px black;
+        }
+        h1{
+            text-align: center;
+            color: aqua;
+        }
+        .button_text_container{
+            position: relative;
+            z-index: 10000;
+        }
+        .button_su_inner{
+            display: inline-block;
+            background: burlywood;
+            color: aliceblue;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            padding: 22px;
+            z-index: 10000;
+        }
+
+        .su_button_circle{
+            background: red;
+            border-radius: 1000px;
+            position: absolute;
+            left: 0px;
+            top: 0;
+            width: 0px;
+            height: 0px;
+            margin-left: 0px;
+            margin-top: 0px;
+            pointer-events: none ;
+
+               }
+
+        .explode-circle{
+            animation: explode 0.5s forwards;
+        }
+        .desplode-circle{
+            animation: desplode 0.5s forwards;
+        }
+
+    </style>
+    
+         <div class="content">
+                  <h1>Different Events Types In JavaScript</h1>
+                  <div class="button_containers">
+                       <div class="butt_su">
+                          <span class="su_button_circle">
+                          </span>
+                          <a href="#" class="button_su_inner" onclick="alert('i am fine ')">
+                          <span class="button_text_container">
+                            simple Inline alert()
+                          </span>
+                        </a>
+                       </div>
+
+
+
+                       <div class="butt_su">
+                        <span class="su_button_circle">
+                        </span>
+                        <a href="#" class="button_su_inner" onclick="callingFunction()">
+                        <span class="button_text_container">
+                          By calling a Function
+                        </span>
+                      </a>
+                     </div>
+
+
+                     <div class="butt_su">
+                        <span class="su_button_circle">
+                        </span>
+                        <a href="#" class="button_su_inner" id="Thirdway">
+                        <span class="button_text_container">
+                          Inline event
+                        </span>
+                      </a>
+                     </div>
+
+
+                     <div class="butt_su">
+                        <span class="su_button_circle">
+                        </span>
+                        <a href="#" class="button_su_inner" id="fourway">
+                        <span class="button_text_container">
+                          Event Listerns
+                        </span>
+                      </a>
+                     </div>
+
+                       
+                  </div>
+
+
+         </div>
+
+         <script>
+            //second way of writing a fucntion 
+            const callingFunction = ()=>{
+                alert(`most common way of writing a functions`)
+            }
+
+            // third way of writing a function 
+
+            const thirdWay = document.getElementById("Thirdway")
+
+            thirdWay.onclick = function (){
+                alert(`most common way of writing a functions again`)
+            }
+                                                                  // only one fuctions works at a time , the tops ones always work
+            thirdWay.onclick = function (){
+                console.log(`most common way of writing a functions again`)
+            }
+                //   thirdWay.onclick = () =>{                  // aise bhi kaam kr gaye gaa
+                    // alert("hello")
+            //  }
+
+
+              // Fourth way of writing a function
+              
+              const fourtWay = document.querySelector('#fourway')
+
+              fourtWay.addEventListener('click' , () => {
+                alert("its also a way of writing a function")
+              })                                                    // both the functions work
+              fourtWay.addEventListener('click' , () => {
+                console.log("its also a way of writing a function")
+              })
+
+
+              
+         </script>
+
+</body>
+</html>

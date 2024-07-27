@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0%;
+        box-sizing: border-box;
+        /* background-color: rgb(230, 217, 217); */
+    }
+
+
+
+    html {
+        font-size: 62.5%;
+        font-family: "Jost", sans-serif;
+    }
+
+    .main_div {
+        /* box-sizing: border-box; */
+        /* background-color: rgb(29, 27, 27); */
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(252, 241, 241);
+        display: grid;
+        place-items: center;
+
+    }
+
+    .main_container {
+        width: 35rem;
+        height: 55rem;
+        background-color: rgb(236, 229, 229);
+        border-radius: 2rem;
+        box-shadow: 0 1.2rem 3rem 0.5rem rgb(39, 38, 38);
+        /* box-shadow: gray; */
+        padding: 3rem;
+        text-align: center;
+    }
+
+    .music_container #title {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        word-spacing: 0.5rem;
+        color: #171717;
+        margin: 2rem 0 0.5rem 0;
+        font-size: 2.5rem;
+        font-weight: 500;
+        text-shadow: 0 0.3rem 0.5rem rgb(0, 0, 0.3);
+        margin-left: 38px;
+
+    }
+
+    .music_container #artist {
+        color: #cccaca;
+        text-transform: capitalize;
+        letter-spacing: 0.1rem;
+        font-size: 2rem;
+        margin-bottom: 4rem;
+        font-weight: 300;
+        margin-left: 50px;
+
+
+    }
+
+    .img_container {
+        width: 25rem;
+        height: 25rem;
+        margin: auto;
+
+    }
+
+    img {
+        /* make the img object fit and circle */
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 1.2rem 3rem 0.5rem rgba(0, 0, 0.4);
+    }
+
+    .music_controls {
+        width: 20rem;
+        display: flex;
+        letter-spacing: 20px;
+        margin-left: 33%;
+        margin-top: 20%;
+    }
+
+    .music_controls .fas {
+        color: #111111;
+        font-size: 2rem;
+        cursor: pointer;
+        filter: drop-shadow(0 1.2rem 3rem 0.5rem rgba(0, 0, 0.4));
+        /* letter-spacing: 10px; */
+    }
+
+    .music_controls .main_button {
+        width: 5rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: rgb(29, 27, 27);
+
+        color: #ddd6d6;
+
+
+
+        display: flex;
+        justify-content: center;
+
+        align-items: center;
+
+        /* add display flex to center the icons */
+        font-size: 1.4rem;
+        transform: translate(-22%, -20%);
+
+
+    }
+
+    .music_controls .fas:hover {
+        color: gray;
+    }
+
+    .music_controls .fa-play:hover {
+        background-color: #f6f6f6;
+        color: #111;
+        box-shadow: 0 1rem 2rem 0.2rem rgb(0, 0, 0.4);
+
+    }
+
+    .anime {
+        animation: rotatePlayer 3s linear infinite;
+    }
+
+    @keyframes rotatePlayer {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(362deg);
+        }
+    }
+</style>
+
+
+
+
+
+<body>
+    <div class="main_div">
+        <div class="music_container">
+            <h2 id="title">LOTUS LANE</h2>
+            <h3 id="artist">THE LOYALlist</h3>
+            <div class="img_container">
+                <img src="img/aa.png" alt="" />
+            </div>
+            <audio src="music/tu-1.mp3"></audio>
+            <!-- controls -->
+            <div class="music_controls">
+                <i class="fas fa-backward  main_l" id="prev" title="previous"></i>
+                <i class="fas fa-play main_button" id="play" title="play"></i>
+                <i class="fas fa-forward" id="next" title="Next"></i>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const music = document.querySelector("audio");
+        const img = document.querySelector("img");
+        const play = document.getElementById("play");
+        const artist = document.getElementById("artist");
+        const title = document.getElementById("title");
+        const prev = document.getElementById("prev");
+        const next = document.getElementById("next");
+
+        const Songs = [
+            {
+                name: "tu-1",
+
+                title: "Lotus Lane",
+                artist: "the loyallist",
+            },
+            {
+                name: "tu-2",
+
+                title: "sappheiros",
+                artist: "Aurora",
+            },
+            {
+                name: "tu-3",
+
+                title: "Walking Firiri",
+                artist: "Gorlhali",
+            },
+        ];
+
+
+        let isPlaying = false;
+
+        // for play function
+        const playMusic = () => {
+            isPlaying = true;
+            music.play();
+            play.classList.replace("fa-play", "fa-pause")
+            img.classList.add("anime");
+
+
+
+        };
+        // for pause function
+        const pauseMusic = () => {
+            isPlaying = false;
+            music.pause();
+            play.classList.replace("fa-pause", "fa-play")
+            img.classList.remove("anime");
+        };
+
+        play.addEventListener("click", () => {
+            if (isPlaying) {
+                pauseMusic();
+            } else {
+                playMusic();
+            }
+        });
+
+
+        // changing data
+        const loadSong = (Songs) => {
+            title.textContent = Songs.title;
+            artist.textContent = Songs.artist;
+            music.src = "music/" + Songs.name + ".mp3";
+            img.src = "img/" + Songs.name + ".jpeg";
+        };
+        SongIndex = 0;
+
+        // loadsong(songs[1] );
+        const nextSong = () => {
+            SongIndex = (SongIndex + 1) % Songs.length;
+            loadSong(Songs[SongIndex]);
+        };
+        next.addEventListener("click", nextSong);
+        prev.addEventListener("click", prevsong);
+    </script>
+
+</body>
+
+</html>

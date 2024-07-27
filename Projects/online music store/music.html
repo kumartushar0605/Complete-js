@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body
+{
+background:'img/m1.jpg'
+}
+ 
+h1{ 
+    color: white;
+    font-size: 240%;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    margin-left: 250px;
+
+
+}
+
+.box{
+    transform: translate(35%,20%);
+    border-color: #bf55ec;
+    border: solid;
+    border-radius: 4%;
+    width: 900px;
+    
+
+}
+
+
+    .colorchange{
+
+animation: colorchangetushar 1s infinite;
+}
+
+@keyframes colorchangetushar {
+0%{color: red;}
+25%{color:#bf55ec;}
+50%{color: white;}
+100%{color:#8755ec;}
+
+}
+.le{
+    transform: translate(40%,50%);
+}
+.ki{
+    transform: translate(1%,90%);
+}
+.fe{
+    transform: translate(74%,70%);
+}
+.b1{
+    transform: translate(3%,1200%);
+}
+.b2{
+    transform: translate(38%,1200%);
+}
+.b3{
+    transform: translate(77%,1200%);
+}
+</style>
+<body >
+    <img style="position: absolute;height: 90px;margin-top: 0px;margin-bottom: 50px;" src="img/m4.jpg">
+
+    <div class="box">
+
+        <h1> <span class="colorchange">Online Music Store</span><br>
+            </h1>
+    </div>
+
+    <Div class="container1">
+        <img style="margin-left: 30px; position: absolute;height: 200px;width: 200px; margin-top: 80px;margin-bottom: 50px;" src="img/gunjan-saxena.jpg">
+        <h2 class="ki"><a href="#"> <span class="colorchange"> Ki Beti </span> </a></h2>
+        <audio id="idAudio">
+            <source src=
+    "Bharat Ki Beti - Gunjan Saxena.mp3"
+                    type="">
+        
+        </audio>
+        <div class="b1">
+        <button onclick="play_Audio()" type="button">Play Audio</button>
+        <button onclick="pause_Audio()" type="button">Pause Audio</button>
+</div>
+        
+    </Div>
+    <div class="container2">
+        <img style="margin-left: 600px; position: absolute;height: 200px;width: 200px; margin-top: 80px;margin-bottom: 50px;" src="img/chhalaang.jpg">
+        <h2 class="le"><a href="#"><span class="colorchange">Le Chhalaang</span>   </a></h2>
+        <audio id="idAudio2">
+            <source src=
+    "Le Chhalaang.mp3"
+                    type="">
+        
+        </audio>
+        <div class="b2">
+        <button onclick="play_Audio2()" type="button">Play Audio</button>
+        <button onclick="pause_Audio2()" type="button">Pause Audio</button>
+</div>
+
+    </div>
+    <div class="container3">
+        <img style="margin-left: 1200px; position: absolute;height: 200px;width: 200px; margin-top: 80px;margin-bottom: 50px;" src="img/anari.jpg">
+        <h2 class="fe"><a href="#"><span class="colorchange">Le-Aaya-Hoon-Chaloji</span>  </a></h2>
+        <audio id="idAudio3">
+            <source src=
+    "Le-Aaya-Hoon-Chaloji.mp3"
+                    type="">
+        
+        </audio>
+        <div class="b3">
+        <button onclick="play_Audio3()" type="button">Play Audio</button>
+        <button onclick="pause_Audio3()" type="button">Pause Audio</button>
+</div>
+
+    </div>
+    <script>
+		const GFG2 = document.getElementById("idAudio");
+
+		function play_Audio() {
+			GFG2.play();
+		}
+
+		function pause_Audio() {
+			GFG2.pause();
+		}
+        const GFG3 = document.getElementById("idAudio2");
+
+		function play_Audio2() {
+			GFG3.play();
+		}
+
+		function pause_Audio2() {
+			GFG3.pause();
+		}
+        
+        const GFG4 = document.getElementById("idAudio3");
+
+function play_Audio3() {
+    GFG4.play();
+}
+
+function pause_Audio3() {
+    GFG4.pause();
+}
+	</script>
+
+</body>
+</html>

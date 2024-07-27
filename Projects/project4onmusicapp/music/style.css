@@ -1,0 +1,30 @@
+ /* @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+ *,
+ *::before,
+ *::after{
+     margin: 0;
+     padding: 0%;
+     box-sizing: border-box;
+ }
+ html{
+     font-size: 62.5%;
+     font-family: "Jost",sans-serif;
+ }
+
+ .main_div{
+     width: 100vw;
+     height: 100vh;
+     background-color: rgb(252, 241, 241);
+     
+ }
+ .main_container{
+     width: 35rem;
+     height: 55rem;
+     background-color: white;
+     border-radius: 2rem;
+     box-shadow: 0  1.2rem 3rem 0.5rem black;
+     padding: 3rem;
+     text-align: center;
+ }
+
+ */

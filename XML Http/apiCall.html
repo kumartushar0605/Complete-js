@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        // XMlHttpRequest objects are used to interacts with servers . you can retrive data from a URL 
+        // without having to do a full page refresh .
+        // XMlHttpRequest is used heavily in AJAX prgramming
+        
+        // Ajax (Asynchronous Javascript And Xml) is a programming practice of building complex , dynamic webpages using a technology known as XML HttpRequest
+
+        const request = new XMLHttpRequest();
+        request.open('GET','https://restcountries.eu/rest/v2/name/nepal');
+        request.send(); // we send the request to give the data of the api
+
+        // To get the response
+        request.addEventListener('load',function(){
+                // const dataa=  this.responseText //we will get the data of the api in the dataa
+                // console.log(dataa)
+
+                const [dataa] = JSON.parse(this.responseText);// Array distrcturing object properties , in a proper way of a key value pair
+                console.log(data.capital);
+
+        });
+
+    </script>
+</body>
+</html>
